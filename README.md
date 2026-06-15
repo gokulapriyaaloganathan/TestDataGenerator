@@ -36,7 +36,7 @@ py generate_test_data.py
 deactivate 
 ## Usage
 
-1. **Prepare the schema workbook** — create `schema.xlsx` with one or more sheets. Each sheet must have the following columns (column positions are auto-detected by header name, case-insensitive):
+1. **Prepare the schema workbook** — create `HMS_Table_Schema.xlsx` in the project folder with one or more sheets. Each sheet must have the following columns (column positions are auto-detected by header name, case-insensitive):
 
    | Column | Description |
    |---|---|
@@ -59,7 +59,7 @@ deactivate
 
 ## Getting the Schema from SQL Server
 
-Use the provided SQL script (`schema.script to fetch.sql`) to query `sys.columns` and export the results as the input Excel schema. Update the `WHERE` clause to target your schema and tables:
+Use the provided SQL script (`schema.script to fetch.sql`) to query `sys.columns` and export the results into `HMS_Table_Schema.xlsx`. Update the `WHERE` clause to target your schema and tables:
 
 ```sql
 WHERE s.name = 'your_schema_name'
@@ -86,6 +86,10 @@ Rules are placed in the `Rule` column of the schema workbook and control how val
 datagenerator/
 ├── generate_test_data.py       # Main script
 ├── requirements.txt            # Python dependencies
-├── schema.script to fetch.sql  # SQL Server query to build the schema Excel input
+├── schema.script to fetch.sql  # SQL Server query to build HMS_Table_Schema.xlsx
 └── README.md
 ```
+
+## Input File Name
+
+The script looks specifically for `HMS_Table_Schema.xlsx` in the same folder as [generate_test_data.py](generate_test_data.py).
