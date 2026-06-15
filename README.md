@@ -14,6 +14,20 @@ For each table three sheets are created:
 | `<Table>_insertscript` | SQL INSERT statements | Green |
 | `<Table>_deletescript` | SQL DELETE statements | Orange |
 
+## Input and Output Files
+
+### Input file
+
+- `HMS_Table_Schema.xlsx`
+- Must be placed in the same folder as [generate_test_data.py](generate_test_data.py)
+- Contains one or more sheets with schema metadata and optional generation rules
+
+### Output file
+
+- `HMS_Test_Data_<YYYYMMDD_HHMMSS>.xlsx`
+- Created in the same project folder when the script runs successfully
+- Contains generated test data, insert scripts, and delete scripts for each table
+
 ## Requirements
 
 - Python 3.8+
@@ -93,3 +107,5 @@ datagenerator/
 ## Input File Name
 
 The script looks specifically for `HMS_Table_Schema.xlsx` in the same folder as [generate_test_data.py](generate_test_data.py).
+
+The generated output file is named `HMS_Test_Data_<YYYYMMDD_HHMMSS>.xlsx`.
